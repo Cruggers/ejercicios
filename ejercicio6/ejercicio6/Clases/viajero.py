@@ -30,17 +30,11 @@ class Viajero_Frecuente:
         self.__millas_acum=valor
     #sobre carga de operadores
     def __add__ (self,suma):
-        if type(self) == type(suma):
-            return self.__millas_acum + suma.getMillasAcumuladas()
-        else:
-            if type(suma) == int:
-                return self.__millas_acum + suma
+        if type(suma) == int:
+            return self.__millas_acum + suma
     def __sub__ (self,valor):
-        if type(self) == type(valor):
-            return self.__millas_acum - valor.getMillasAcumuladas()
-        else:
-            if type(valor) == int:
-                return self.__millas_acum - valor
+        if type(valor) == int:
+           return self.__millas_acum - valor
     def __gt__(self,compara):
         if type(self) == type(compara):
             return self.__millas_acum > compara.getMillasAcumuladas()
